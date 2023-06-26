@@ -22,3 +22,10 @@ stop_button.place(x=215, y=500, width=100)
 
 open_button = ttk.Button(root, text="OPEN", command=lambda: open_file())
 open_button.place(x=320, y=500, width=100)
+
+def open_file():
+    filename = filedialog.askopenfilefilename()
+    media = vlc.Media(filename)
+    media_player.set_media(media)
+
+root.mainloop()
